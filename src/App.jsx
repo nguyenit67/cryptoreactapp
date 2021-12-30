@@ -1,45 +1,42 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+import { Route, Switch, Link } from 'react-router-dom';
+import { Layout, Typography, Space } from 'antd';
+
+import { Navbar, Exchanges, Homepage, Cryptocurrencies, News, CryptoDetails } from './components';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="app">
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <div className="main">
+        <Layout>
+          <div className="routes">
+            <Switch>
+              <Route exact path="/" component={Homepage} />
+              <Route exact path="/exchanges" component={Exchanges} />
+              <Route exact path="/cryptocurrencies" component={Cryptocurrencies} />
+              <Route exact path="/crypto/:coinId" component={CryptoDetails} />
+              <Route exact path="/news" component={News} />
+            </Switch>
+          </div>
+        </Layout>
+        <div className="footer">
+          <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>
+            Crytoverse <br />
+            All rights reserved
+          </Typography.Title>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/exchanges">Exchanges</Link>
+            <Link to="/news">News</Link>
+          </Space>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
