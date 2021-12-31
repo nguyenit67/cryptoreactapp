@@ -25,15 +25,18 @@ function News({ simplified }) {
             showSearch
             className="select-news"
             placeholder="Select a Crypto"
-            // optionFilterProp="value"
+            optionFilterProp="value"
             onChange={(value) => setNewsCategory(value)}
             filterOption={(input, option) => {
               console.log(option);
               return option.value.toLowerCase().indexOf(input.toLowerCase()) >= 0;
             }}
           >
+            <Option value="Cryptocurrency">Cryptocurrency</Option>
             {data?.data?.coins?.map((coin) => (
-              <Option value={coin.name} key={coin.id} /* children={coin.name} */ />
+              <Option value={coin.name} key={coin.id}>
+                {coin.name}
+              </Option>
             ))}
           </Select>
         </Col>
