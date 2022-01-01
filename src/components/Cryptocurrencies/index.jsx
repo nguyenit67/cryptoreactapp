@@ -14,13 +14,13 @@ function Cryptocurrencies({ simplified }) {
   // console.table(cryptos);
 
   const mappingIconUrl = (coinList) => coinList.map((coin) => (
-      coin.symbol === 'DOGE'
-        ? {
-          ...coin,
-          iconUrl: 'https://clipground.com/images/dogecoin-logo-clipart-2.jpg',
-        }
-        : coin
-    ));
+    coin.symbol === 'DOGE'
+      ? {
+        ...coin,
+        iconUrl: 'https://www.coinopsy.com/media/img/quality_logo/Dogecoin.png',
+      }
+      : coin
+  ));
 
   useEffect(() => {
     // debugger;
