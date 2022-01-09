@@ -1,5 +1,6 @@
 {
   "recommendations": [
-    "mlewand.select-part-of-word"
+    "mlewand.select-part-of-word",
+    "dendron.dendron"
   ]
 }
