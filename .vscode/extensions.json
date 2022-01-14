@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "mlewand.select-part-of-word",
-    "dendron.dendron"
+    "dendron.dendron",
+    "waderyan.nodejs-extension-pack"
   ]
 }
