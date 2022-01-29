@@ -347,6 +347,15 @@ a:hover {
 .show-more {
   margin-top: 0px !important;
 }
+
+.popover-without-arrow.popover-without-arrow {
+  padding-top: 0;
+  width: 30vw;
+}
+.popover-without-arrow .ant-popover-arrow {
+  display: none;
+}
+
 .exchange-image {
   margin: 0px 10px !important;
 }
