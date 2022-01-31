@@ -1,3 +1,6 @@
+@import '/node_modules/antd/lib/style/default.less';
+@import '~antd/dist/antd.less';
+
 :root {
   --text-primary: #000;
   --bgPrimary: #fff;
@@ -348,12 +351,23 @@ a:hover {
   margin-top: 0px !important;
 }
 
-.popover-without-arrow.popover-without-arrow {
-  padding-top: 0;
-  width: 30vw;
+.cm-popover-no-arrow {
+  && {
+    padding-top: 0;
+    width: 30vw;
+
+    animation: none;
+  }
+
+  .ant-popover-arrow {
+    display: none;
+  }
 }
-.popover-without-arrow .ant-popover-arrow {
-  display: none;
+
+.exchange-currency-selector {
+  && {
+    font-weight: 500;
+  }
 }
 
 .exchange-image {
@@ -366,6 +380,27 @@ a:hover {
   display: flex;
   gap: 10px;
 }
+
+.currency-dropdown {
+  .currency-option {
+    padding: 4px 16px;
+    font-size: 0.8rem;
+    line-height: 22px;
+
+    cursor: pointer;
+
+    &:hover,
+    &:hover .currency-name {
+      background: #f8f8f8;
+      color: ;
+    }
+  }
+
+  .currency-name {
+    margin-left: 8px;
+  }
+}
+
 .search-crypto {
   margin: 20px auto 30px auto;
   width: 250px;

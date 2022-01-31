@@ -10,7 +10,7 @@ import {
   News,
   CryptoDetails,
 } from './components';
-import './App.css';
+import './App.less';
 
 function App() {
   return (
