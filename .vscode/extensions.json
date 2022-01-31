@@ -2,6 +2,7 @@
   "recommendations": [
     "mlewand.select-part-of-word",
     "dendron.dendron",
-    "waderyan.nodejs-extension-pack"
+    "waderyan.nodejs-extension-pack",
+    "gencer.html-slim-scss-css-class-completion"
   ]
 }
