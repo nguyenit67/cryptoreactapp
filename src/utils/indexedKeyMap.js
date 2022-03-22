@@ -5,3 +5,5 @@ export default function mapKeyWithIndex(arrToMap, callBackFn) {
     <Fragment key={index}>{callBackFn(...args)}</Fragment>
   ));
 }
+
+// such a stupid idea

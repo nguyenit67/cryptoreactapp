@@ -354,9 +354,6 @@ a:hover {
 .cm-popover-no-arrow {
   && {
     padding-top: 0;
-    width: 30vw;
-
-    animation: none;
   }
 
   .ant-popover-arrow {
@@ -382,22 +379,52 @@ a:hover {
 }
 
 .currency-dropdown {
+  @media screen and (min-width: 993px) {
+    width: 680px;
+  }
+
+  min-width: 10rem;
+
+  .ant-popover-inner-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.currency-select-input {
+  @media screen and (min-width: 992px) {
+    max-width: 41.66667%;
+  }
+
+  margin-left: 1rem;
+}
+
+.currency-select {
   .currency-option {
+    // padding: 4px 0;
     padding: 4px 16px;
-    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+
+    font-size: 0.85rem;
     line-height: 22px;
+    white-space: nowrap;
 
     cursor: pointer;
 
     &:hover,
     &:hover .currency-name {
       background: #f8f8f8;
-      color: ;
+      color: @link-color;
     }
+  }
+
+  .currency-menu-group-title {
+    margin-left: 1rem;
   }
 
   .currency-name {
     margin-left: 8px;
+    // display: block;
   }
 }
 

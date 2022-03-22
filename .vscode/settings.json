@@ -1,5 +1,8 @@
 {
   "antdRush.defaultAntdMajorVersion": "^4",
   "javascript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.importModuleSpecifier": "non-relative"
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "cSpell.words": [
+    "millify"
+  ]
 }

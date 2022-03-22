@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-import createRequest from 'src/helpers/createRequest';
+import axios from 'axios';
+import { createRequest } from 'src/utils';
 
 // const exchangeApiHeaders = {
 //   'x-rapidapi-host': 'coingecko.p.rapidapi.com',
@@ -14,9 +14,40 @@ export const exchangeApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     getExchanges: builder.query({
-      query: () => createRequest(`/exchanges`),
+      query: ({ page, per_page }) =>
+        createRequest(
+          `/exchanges`,
+          {},
+          {
+            page,
+            per_page,
+          }
+        ),
+      transformResponse: (response, _meta, arg) => {
+        console.log('inside /exchanges', { arg });
+
+        // const count = axios.get(`${baseUrl}/exchanges/list`);
+
+        // console.log('axios /exchanges/list', count);
+
+        return {
+          data: response,
+          pagination: {
+            page: arg.page,
+            limit: arg.per_page,
+            // total: count,
+          },
+        };
+      },
+    }),
+    getExchangesCount: builder.query({
+      query: () => createRequest(`/exchanges/list`),
+      transformResponse: (response) => {
+        console.log('transformResponse', response);
+        return Number(response?.length) || 0;
+      },
     }),
   }),
 });
 
-export const { useGetExchangesQuery } = exchangeApi;
+export const { useGetExchangesQuery, useGetExchangesCountQuery } = exchangeApi;

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import createRequest from 'src/helpers/createRequest';
+import { createRequest } from 'src/utils';
 
 const baseUrl = 'https://api.coingecko.com/api/v3';
 

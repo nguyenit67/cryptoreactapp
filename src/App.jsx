@@ -2,15 +2,10 @@ import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 
-import {
-  Navbar,
-  Exchanges,
-  Homepage,
-  Cryptocurrencies,
-  News,
-  CryptoDetails,
-} from './components';
+import { Navbar, Cryptocurrencies, News, CryptoDetails } from './components';
 import './App.less';
+import Homepage from 'src/pages/Homepage';
+import Exchanges from 'src/pages/Exchanges';
 
 function App() {
   return (
